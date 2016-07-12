@@ -1,7 +1,12 @@
 import psycopg2
+Host='localhost'
+User='postgres'
+Password='postgres'
+Dbname='cemdb'
+Port='5432'
 
 try:
-    conn = psycopg2.connect(dbname='cemdb', user='postgres', host='localhost', password='postgres', port='5432' )
+    conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )
     print "Connected to local database"
 except:
     print "I am unable to connect to local Postgres database"

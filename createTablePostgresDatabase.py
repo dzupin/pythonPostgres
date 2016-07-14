@@ -16,6 +16,7 @@ except:
 
 try:
     cur = conn.cursor()
+    cur.execute("DROP TABLE IF EXISTS Cars")
     cur.execute("CREATE TABLE Cars(Id INTEGER PRIMARY KEY, Name VARCHAR(20), Price INT)")
     cur.execute("INSERT INTO Cars VALUES(1,'Audi',52642)")
     cur.execute("INSERT INTO Cars VALUES(2,'Mercedes',57127)")
@@ -32,7 +33,7 @@ except psycopg2.DatabaseError, e:
     if conn:
         conn.rollback()
     print 'Error %s' % e
-    print "Failed to create new table in your Postgres database"
+    print "Failed to create table in your Postgres database"
     sys.exit(1)
 
 finally:

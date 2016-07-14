@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import psycopg2
-Host='192.168.86.188'
+Host='192.168.86.189'
 User='postgres'
 Password='postgres'
 Dbname='cemdb'

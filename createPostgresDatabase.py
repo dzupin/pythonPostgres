@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-Host='192.168.86.188'
+Host='192.168.86.189'
 User='postgres'
 Password='postgres'
 Dbname='postgres'  #Use default installation database for initial connection

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# reference link: http://zetcode.com/db/postgresqlpythontutorial/
+
 import psycopg2
 Host='192.168.86.189'
 User='postgres'

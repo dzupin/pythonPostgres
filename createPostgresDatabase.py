@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# reference link: http://zetcode.com/db/postgresqlpythontutorial/
+
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 Host='192.168.86.189'

@@ -31,6 +31,19 @@ except psycopg2.DatabaseError, e:
     print 'Error %s' % e
     sys.exit(1)
 
+# List all tables in database
+print ("\nList of all tables:")
+try:
+    cur.execute("""SELECT table_name FROM information_schema.tables
+           WHERE table_schema = 'public'""")
+    rows = cur.fetchall()
+    for row in rows:
+        print row[0]
+
+except psycopg2.DatabaseError, e:
+    print 'Error %s' % e
+    sys.exit(1)
+
 finally:
     if conn:
         conn.close()

@@ -40,7 +40,7 @@ try:
     data = cur.fetchone()[0]
 
     writeImage(data)
-    print "Successfully got image from Postgres database"
+    print "Successfully downloaded image from Postgres database"
 
 except psycopg2.DatabaseError, e:
     if conn:

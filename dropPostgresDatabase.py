@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 # reference link: http://zetcode.com/db/postgresqlpythontutorial/
 
+import databaseProperties
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-Host='192.168.86.189'
-User='postgres'
-Password='postgres'
-Dbname='postgres'  #Use default installation database for initial connection
-DbnameOld='mydatabase'  #In order to drop specific database your connection string must use different instance
+Host=databaseProperties.Host
+User=databaseProperties.User
+Password=databaseProperties.Password
+Dbname=databaseProperties.DbnameDefault  #Use default installation database for initial connection
+DbnameOld=databaseProperties.Dbname  #In order to drop specific database your connection string must use different instance
 Port='5432'
 
 try:

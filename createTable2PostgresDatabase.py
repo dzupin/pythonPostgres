@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 # reference link: http://zetcode.com/db/postgresqlpythontutorial/
 
+import databaseProperties
 import psycopg2
 import sys
-Host='192.168.86.189'
-User='postgres'
-Password='postgres'
-Dbname='mydatabase'
-Port='5432'
+
+Host=databaseProperties.Host
+User=databaseProperties.User
+Password=databaseProperties.Password
+Dbname=databaseProperties.Dbname
+Port=databaseProperties.Port
 
 cars2 = (
     (1, 'Audi', 25264),

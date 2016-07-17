@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # reference link: http://zetcode.com/db/postgresqlpythontutorial/
-
+import databaseProperties
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-Host='192.168.86.189'
-User='postgres'
-Password='postgres'
-Dbname='postgres'  #Use default installation database for initial connection
-DbnameNew='mydatabase'
-Port='5432'
+Host=databaseProperties.Host
+User=databaseProperties.User
+Password=databaseProperties.Password
+Dbname=databaseProperties.DbnameDefault  #Use default installation database for initial connection
+DbnameNew=databaseProperties.Dbname
+Port=databaseProperties.Port
 
 try:
     conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )

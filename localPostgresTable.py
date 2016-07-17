@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # reference link: http://zetcode.com/db/postgresqlpythontutorial/
 
+import databaseProperties
 import psycopg2
-Host='192.168.86.189'
-User='postgres'
-Password='postgres'
-Dbname='cemdb'
-Port='5432'
-Table='mytesttable'
+Host=databaseProperties.Host
+User=databaseProperties.User
+Password=databaseProperties.Password
+Dbname=databaseProperties.Dbname
+Port=databaseProperties.Port
 
 try:
     conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )
@@ -16,7 +16,7 @@ except:
     print "I am unable to connect to Postgres database"
 
 try:
-    SelectStatement = "SELECT * from " + Table
+    SelectStatement = "SELECT * from " + "Cars"
     cur = conn.cursor()
     cur.execute(SelectStatement)
     rows = cur.fetchall()
@@ -26,4 +26,4 @@ except:
 
 print "\nShow me the some data:\n"
 for row in rows:
-    print  "id: ",row[0]," first:\t", row[1], " second:\t", row[2], " size:\t", row[3]
+    print  "id: ",row[0]," name:\t", row[1], "\t\t price:\t", row[2]

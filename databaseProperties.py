@@ -1,4 +1,4 @@
-Host='172.16.163.129'
+Host='localhost'
 User='postgres'
 Password='postgres'
 DbnameDefault='postgres'  #Use default installation database for initial connection

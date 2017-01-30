@@ -13,9 +13,9 @@ Port=databaseProperties.Port
 conn = None
 try:
     conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )
-    print "Connected to following database on Postgres server: " + Dbname
+    print ("Connected to following database on Postgres server: " + Dbname)
 except:
-    print "I am unable to connect to Postgres server"
+    print ("I am unable to connect to Postgres server")
 
 try:
     cur = conn.cursor()
@@ -30,13 +30,13 @@ try:
     cur.execute("INSERT INTO Cars VALUES(7,'Hummer',41400)")
     cur.execute("INSERT INTO Cars VALUES(8,'Volkswagen',21600)")
     conn.commit()
-    print "Successfully created new table with sample data"
+    print ("Successfully created new table with sample data")
 
-except psycopg2.DatabaseError, e:
+except psycopg2.DatabaseError as e:
     if conn:
         conn.rollback()
-    print 'Error %s' % e
-    print "Failed to create table in your Postgres database"
+    print ('Error %s' % e)
+    print ("Failed to create table in your Postgres database")
     sys.exit(1)
 
 finally:

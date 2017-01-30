@@ -25,9 +25,9 @@ cars2 = (
 conn = None
 try:
     conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )
-    print "Connected to following database on Postgres server: " + Dbname
+    print ("Connected to following database on Postgres server: " + Dbname)
 except:
-    print "I am unable to connect to Postgres server"
+    print ("I am unable to connect to Postgres server")
 
 try:
     cur = conn.cursor()
@@ -37,18 +37,16 @@ try:
     cur.executemany(query, cars2)
 
     conn.commit()
-    print "Successfully created new table with sample data"
+    print ("Successfully created new table with sample data")
 
-except psycopg2.DatabaseError, e:
+except psycopg2.DatabaseError as e:
     if conn:
         conn.rollback()
-    print 'Error %s' % e
-    print "Failed to create table2 in your Postgres database"
+    print ('Error %s' % e)
+    print ("Failed to create table2 in your Postgres database")
     sys.exit(1)
 
 finally:
     if conn:
         conn.close()
-
-
 conn.close()

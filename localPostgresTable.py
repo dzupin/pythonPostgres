@@ -11,9 +11,9 @@ Port=databaseProperties.Port
 
 try:
     conn = psycopg2.connect(dbname=Dbname, user=User, host=Host, password=Password, port=Port )
-    print "Connected to specified Postgres database"
+    print ("Connected to specified Postgres database")
 except:
-    print "I am unable to connect to Postgres database"
+    print ("I am unable to connect to Postgres database")
 
 try:
     SelectStatement = "SELECT * from " + "Cars"
@@ -21,9 +21,9 @@ try:
     cur.execute(SelectStatement)
     rows = cur.fetchall()
 except:
-    print "Select statement error during data retrieval from Postgres database"
+    print ("Select statement error during data retrieval from Postgres database")
 
 
-print "\nShow me the some data:\n"
+print ("\nShow me the some data:\n")
 for row in rows:
-    print  "id: ",row[0]," name:\t", row[1], "\t\t price:\t", row[2]
+    print  ("id: ",row[0]," name:\t", row[1], "\t\t price:\t", row[2])

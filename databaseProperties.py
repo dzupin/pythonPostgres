@@ -1,6 +1,6 @@
 #Host='192.168.86.189'
 #Host='localhost'
-Host='lubuntu16'
+Host='centos69'
 User='postgres'
 Password='postgres'
 DbnameDefault='postgres'  #Use default installation database for initial connection
